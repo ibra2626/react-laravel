@@ -2098,10 +2098,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Dashboard.jsx":
-/*!***********************************************!*\
-  !*** ./resources/js/components/Dashboard.jsx ***!
-  \***********************************************/
+/***/ "./resources/js/components/ListExamples/ListExample_1.jsx":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/ListExamples/ListExample_1.jsx ***!
+  \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2111,12 +2111,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _DashboardComponents_LoginButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DashboardComponents/LoginButton */ "./resources/js/components/DashboardComponents/LoginButton.jsx");
-/* harmony import */ var _DashboardComponents_LogoutButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DashboardComponents/LogoutButton */ "./resources/js/components/DashboardComponents/LogoutButton.jsx");
-/* harmony import */ var _DashboardComponents_UsernameInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DashboardComponents/UsernameInput */ "./resources/js/components/DashboardComponents/UsernameInput.jsx");
-/* harmony import */ var _DashboardComponents_Error__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DashboardComponents/Error */ "./resources/js/components/DashboardComponents/Error.jsx");
-/* harmony import */ var _DashboardComponents_Welcome__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DashboardComponents/Welcome */ "./resources/js/components/DashboardComponents/Welcome.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2143,246 +2138,53 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+var ListExample_1 = /*#__PURE__*/function (_Component) {
+  _inherits(ListExample_1, _Component);
 
+  var _super = _createSuper(ListExample_1);
 
-
-
-
-
-
-var Dashboard = /*#__PURE__*/function (_Component) {
-  _inherits(Dashboard, _Component);
-
-  var _super = _createSuper(Dashboard);
-
-  function Dashboard(props) {
+  function ListExample_1(props) {
     var _this;
 
-    _classCallCheck(this, Dashboard);
+    _classCallCheck(this, ListExample_1);
 
     _this = _super.call(this, props);
     _this.state = {
-      isLoggedIn: false,
-      username: "",
-      AuthUser: "",
       users: [{
         id: 1,
-        name: "ibrahim",
-        rol: "admin"
+        name: "ibrahim"
       }, {
         id: 2,
-        name: "deniz",
-        rol: "user"
+        name: "deniz"
       }, {
         id: 3,
-        name: "irem",
-        rol: "user"
-      }],
-      bannedUsers: [],
-      loginFailed: false
+        name: "ece"
+      }]
     };
-    _this.LoginAction = _this.LoginAction.bind(_assertThisInitialized(_this));
-    _this.LogoutAction = _this.LogoutAction.bind(_assertThisInitialized(_this));
-    _this.UsernameInputChangeAct = _this.UsernameInputChangeAct.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  _createClass(Dashboard, [{
-    key: "LoginAction",
-    value: function LoginAction() {
-      var _this2 = this;
-
-      var user = this.state.users.find(function (user) {
-        return user.name == _this2.state.username;
-      });
-      user != null ? this.setState({
-        AuthUser: user,
-        isLoggedIn: true,
-        username: ""
-      }) : this.setState({
-        loginFailed: true
-      });
-    }
-  }, {
-    key: "LogoutAction",
-    value: function LogoutAction() {
-      this.setState({
-        AuthUser: "",
-        isLoggedIn: false
-      });
-    }
-  }, {
-    key: "UsernameInputChangeAct",
-    value: function UsernameInputChangeAct(e) {
-      this.setState({
-        username: e.target.value,
-        loginFailed: false
-      });
-    }
-  }, {
+  _createClass(ListExample_1, [{
     key: "render",
     value: function render() {
-      var isLoggedIn = this.state.isLoggedIn;
-      var isLoginFailed = this.state.loginFailed;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        children: isLoggedIn ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_DashboardComponents_Welcome__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            user: this.state.AuthUser
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_DashboardComponents_LogoutButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            onClick: this.LogoutAction
-          })]
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_DashboardComponents_Error__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            username: this.state.username,
-            loginFailed: isLoginFailed
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_DashboardComponents_UsernameInput__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            value: this.state.username,
-            onChange: this.UsernameInputChangeAct
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_DashboardComponents_LoginButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            onClick: this.LoginAction
-          })]
+      var userListItems = this.state.users.map(function (user) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: user.name
+        }, user.id.toString());
+      });
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
+          children: userListItems
         })
       });
     }
   }]);
 
-  return Dashboard;
+  return ListExample_1;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Dashboard);
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Dashboard, {}), document.getElementById('root'));
-
-/***/ }),
-
-/***/ "./resources/js/components/DashboardComponents/Error.jsx":
-/*!***************************************************************!*\
-  !*** ./resources/js/components/DashboardComponents/Error.jsx ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-function ErrorUsername(props) {
-  if (!props.loginFailed) {
-    return null;
-  }
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-    children: ["Kullan\u0131c\u0131 ad\u0131 hatal\u0131! Girilen isim : ", props.username]
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ErrorUsername);
-
-/***/ }),
-
-/***/ "./resources/js/components/DashboardComponents/LoginButton.jsx":
-/*!*********************************************************************!*\
-  !*** ./resources/js/components/DashboardComponents/LoginButton.jsx ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-function LoginButton(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-    onClick: props.onClick,
-    children: "Giri\u015F yap"
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LoginButton);
-
-/***/ }),
-
-/***/ "./resources/js/components/DashboardComponents/LogoutButton.jsx":
-/*!**********************************************************************!*\
-  !*** ./resources/js/components/DashboardComponents/LogoutButton.jsx ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-function LogoutButton(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-    onClick: props.onClick,
-    children: "\xC7\u0131k\u0131\u015F Yap"
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LogoutButton);
-
-/***/ }),
-
-/***/ "./resources/js/components/DashboardComponents/UsernameInput.jsx":
-/*!***********************************************************************!*\
-  !*** ./resources/js/components/DashboardComponents/UsernameInput.jsx ***!
-  \***********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-function UsernameInput(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("input", {
-    onChange: props.onChange,
-    value: props.value
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UsernameInput);
-
-/***/ }),
-
-/***/ "./resources/js/components/DashboardComponents/Welcome.jsx":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/DashboardComponents/Welcome.jsx ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-function Welcome(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-      children: ["Ho\u015Fgeldin ", props.user.name]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-      children: ["Rol\xFCn\xFCz : ", props.user.rol]
-    })]
-  });
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Welcome);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListExample_1);
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ListExample_1, {}), document.getElementById('root'));
 
 /***/ }),
 
@@ -68859,7 +68661,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-__webpack_require__(/*! ./components/Dashboard */ "./resources/js/components/Dashboard.jsx");
+__webpack_require__(/*! ./components/ListExamples/ListExample_1 */ "./resources/js/components/ListExamples/ListExample_1.jsx");
 })();
 
 /******/ })()
