@@ -2098,9 +2098,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/ListExamples/ListExample_1.jsx":
+/***/ "./resources/js/components/ListExamples/ListExample_2.jsx":
 /*!****************************************************************!*\
-  !*** ./resources/js/components/ListExamples/ListExample_1.jsx ***!
+  !*** ./resources/js/components/ListExamples/ListExample_2.jsx ***!
   \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -2138,6 +2138,13 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+function ListItem(props) {
+  var user = props.user;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+    children: user.name
+  });
+}
+
 var ListExample_1 = /*#__PURE__*/function (_Component) {
   _inherits(ListExample_1, _Component);
 
@@ -2168,9 +2175,9 @@ var ListExample_1 = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var userListItems = this.state.users.map(function (user) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: user.name
-        }, user.id.toString());
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ListItem, {
+          user: user
+        }, user.id);
       });
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
@@ -68661,7 +68668,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-__webpack_require__(/*! ./components/ListExamples/ListExample_1 */ "./resources/js/components/ListExamples/ListExample_1.jsx");
+__webpack_require__(/*! ./components/ListExamples/ListExample_2 */ "./resources/js/components/ListExamples/ListExample_2.jsx");
 })();
 
 /******/ })()

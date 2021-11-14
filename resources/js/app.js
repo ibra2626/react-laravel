@@ -12,4 +12,4 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/ListExamples/ListExample_1');
+require('./components/ListExamples/ListExample_2');
