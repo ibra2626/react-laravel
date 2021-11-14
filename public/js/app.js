@@ -2098,10 +2098,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/ListExamples/ListExample_2.jsx":
-/*!****************************************************************!*\
-  !*** ./resources/js/components/ListExamples/ListExample_2.jsx ***!
-  \****************************************************************/
+/***/ "./resources/js/components/FormExample/Form1.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/FormExample/Form1.jsx ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2134,64 +2134,74 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
-function ListItem(props) {
-  var user = props.user;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-    children: user.name
-  });
-}
 
-var ListExample_1 = /*#__PURE__*/function (_Component) {
-  _inherits(ListExample_1, _Component);
 
-  var _super = _createSuper(ListExample_1);
+var Form1 = /*#__PURE__*/function (_Component) {
+  _inherits(Form1, _Component);
 
-  function ListExample_1(props) {
+  var _super = _createSuper(Form1);
+
+  function Form1(props) {
     var _this;
 
-    _classCallCheck(this, ListExample_1);
+    _classCallCheck(this, Form1);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "changeAct", function (e) {
+      _this.setState({
+        name: e.target.value,
+        viewResult: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "submitAct", function (e) {
+      _this.setState({
+        viewResult: true
+      });
+
+      e.preventDefault();
+    });
+
     _this.state = {
-      users: [{
-        id: 1,
-        name: "ibrahim"
-      }, {
-        id: 2,
-        name: "deniz"
-      }, {
-        id: 3,
-        name: "ece"
-      }]
+      name: "",
+      viewResult: false
     };
     return _this;
   }
 
-  _createClass(ListExample_1, [{
+  _createClass(Form1, [{
     key: "render",
     value: function render() {
-      var userListItems = this.state.users.map(function (user) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ListItem, {
-          user: user
-        }, user.id);
-      });
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
-          children: userListItems
-        })
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+            children: "\u0130sminizi giriniz"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            value: this.state.name,
+            onChange: this.changeAct
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            formMethod: "submit",
+            onClick: this.submitAct,
+            children: "G\xF6nder"
+          })]
+        }), this.state.viewResult && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+          children: ["Girilen \u0130sim : ", this.state.name]
+        })]
       });
     }
   }]);
 
-  return ListExample_1;
+  return Form1;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListExample_1);
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ListExample_1, {}), document.getElementById('root'));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form1);
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Form1, {}), document.getElementById('root'));
 
 /***/ }),
 
@@ -68668,7 +68678,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-__webpack_require__(/*! ./components/ListExamples/ListExample_2 */ "./resources/js/components/ListExamples/ListExample_2.jsx");
+__webpack_require__(/*! ./components/FormExample/Form1 */ "./resources/js/components/FormExample/Form1.jsx");
 })();
 
 /******/ })()
